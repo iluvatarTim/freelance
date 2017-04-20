@@ -11,6 +11,12 @@ class CahierDesCharges extends Model {
 	protected $table = 'cdc';
 	public $timestamps = true;
 
+	/*
+	 *
+	 *	classse cahier des charges, contient les requêtes SQL (structury query language) permettant d'interagire avec la table cdc (cahier des charges)
+	 *
+	*/
+
 	public function Project()
 	{
 		return $this->hasOne('App\Project', 'cdc_id');
