@@ -11,7 +11,7 @@ class Ability extends Model {
 
 	public function Test()
 	{
-		return $this->hasMany('App\Test', 'ability_id');
+		return $this->hasMany('App\Test', 'ability_id');//création relation bdd test possède une clef étrangère ability_id qui vient de la table ability
 	}
 
 }
