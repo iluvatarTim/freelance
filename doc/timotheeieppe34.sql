@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  timotheeieppe34.mysql.db
--- Généré le :  Ven 12 Mai 2017 à 01:58
+-- Généré le :  Ven 12 Mai 2017 à 18:42
 -- Version du serveur :  5.6.34-log
 -- Version de PHP :  7.0.15
 
@@ -46,14 +46,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `admin`
---
-
-INSERT INTO `admin` (`id`, `created_at`, `updated_at`, `user_id`) VALUES
-(3, '2017-02-16 12:11:03', '2017-02-16 12:11:03', 27);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -68,14 +61,7 @@ CREATE TABLE IF NOT EXISTS `cdc` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `url_cdc` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `cdc`
---
-
-INSERT INTO `cdc` (`deadline`, `company_id`, `created_at`, `updated_at`, `url_cdc`, `id`) VALUES
-('2017-04-26', 4, '2017-04-10 08:46:02', '2017-04-10 08:46:02', 'cdc/zhhaqlXrS5.pdf', 9);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -91,14 +77,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `company`
---
-
-INSERT INTO `company` (`id`, `pic_url`, `siret`, `denomination`, `created_at`, `updated_at`, `user_id`) VALUES
-(4, 'uploads/ZNLNPdexCg.jpg', 12345678912345, 'SAS', '2017-02-16 12:10:17', '2017-02-16 12:10:17', 26);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -115,14 +94,7 @@ CREATE TABLE IF NOT EXISTS `contrat` (
   `company_id` int(10) unsigned NOT NULL,
   `offre_id` int(10) unsigned NOT NULL,
   `project_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `contrat`
---
-
-INSERT INTO `contrat` (`id`, `url_contrat`, `created_at`, `updated_at`, `freelancer_id`, `company_id`, `offre_id`, `project_id`) VALUES
-(1, 'contrat/U6j2NlBZYS.pdf', '2017-04-12 08:12:43', '2017-04-12 08:12:43', 6, 4, 7, 8);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -137,15 +109,7 @@ CREATE TABLE IF NOT EXISTS `freelancer` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `freelancer`
---
-
-INSERT INTO `freelancer` (`id`, `photo_url`, `cv_url`, `created_at`, `updated_at`, `user_id`) VALUES
-(6, 'uploads/XC06TzjIlw.png', 'cv/ek5dkAgpQF.docx', '2017-02-16 12:09:00', '2017-02-16 12:09:00', 25),
-(7, 'uploads/sRXPeaL5l4.PNG', 'cv/HudQbKee8y.docx', '2017-04-06 07:07:19', '2017-04-06 07:07:19', 28);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -166,16 +130,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `project_id` int(10) unsigned NOT NULL,
   `comp_id` int(10) unsigned NOT NULL,
   `user_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `message`
---
-
-INSERT INTO `message` (`id`, `firstname`, `name`, `mail`, `type`, `content`, `created_at`, `updated_at`, `freelancer_id`, `project_id`, `comp_id`, `user_id`) VALUES
-(1, 'Emma', 'Karena', 'emma@karena.fr', 'private', 'Bonjour,\r\nJe pourrais produire la solution demandée dans le temps impartis pour 900 euros.\r\nCordialement\r\nEmma Karena', '2017-04-02 09:25:37', '2017-04-02 13:36:42', 6, 8, 4, 25),
-(3, 'Jean-Claude', 'Duss', 'jean-claude@duce.fr', 'private', 'je ne suis pas interessé par votre profile désolé\r\nBien cordialement', '2017-04-11 14:30:50', '2017-04-11 14:30:50', 6, 8, 4, 26),
-(4, 'Jean-Claude', 'Duss', 'jean-claude@duce.fr', 'private', 'Finalement j’accepte votre offre et vous valide un contrat', '2017-04-12 06:23:50', '2017-04-12 06:23:50', 6, 8, 4, 26);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -187,26 +142,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) unsigned NOT NULL,
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2016_12_16_145640_create_ability_table', 1),
-(2, '2016_12_16_145640_create_admin_table', 1),
-(3, '2016_12_16_145640_create_cdc_table', 1),
-(4, '2016_12_16_145640_create_company_table', 1),
-(5, '2016_12_16_145640_create_contrat_table', 1),
-(6, '2016_12_16_145640_create_freelancer_table', 1),
-(7, '2016_12_16_145640_create_message_table', 1),
-(8, '2016_12_16_145640_create_offre_table', 1),
-(9, '2016_12_16_145640_create_project_table', 1),
-(10, '2016_12_16_145640_create_result_table', 1),
-(11, '2016_12_16_145640_create_test_table', 1),
-(12, '2016_12_16_145640_create_user_table', 1),
-(13, '2016_12_16_145650_create_foreign_keys', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -221,15 +157,7 @@ CREATE TABLE IF NOT EXISTS `offre` (
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   `freelancer_id` int(10) unsigned NOT NULL,
   `project_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `offre`
---
-
-INSERT INTO `offre` (`id`, `created_at`, `updated_at`, `message`, `freelancer_id`, `project_id`) VALUES
-(7, '2017-04-10 13:23:42', '2017-04-10 13:23:42', 'Bonjour,\r\nJe pourrais produire la solution demandée dans le temps impartis pour 900 euros.\r\nCordialement', 6, 8),
-(8, '2017-04-12 07:47:34', '2017-04-12 07:47:34', 'Bonjour je peux faire une offre avantageuse.\r\nJe peux réaliser le projet en une semaine pour 1200 euros\r\n', 7, 8);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -246,14 +174,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `company_id` int(10) unsigned NOT NULL,
   `cdc_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `project`
---
-
-INSERT INTO `project` (`id`, `title`, `price`, `description`, `created_at`, `updated_at`, `company_id`, `cdc_id`) VALUES
-(8, 'Plateforme de Freelance', 1500.00, 'Création d''une plateforme de freelance.\r\nSur cette plateforme des entreprises pourront déposer des projets.\r\nCes projet seront consultable par n''importe qui mais uniquement des freelancers pourront y postuler.\r\nIl y aura un système d''authentification et un back-office pour un administrateur.\r\nPlus de détail dans le cahier des charges', '2017-04-10 08:46:02', '2017-04-10 08:46:02', 4, 9);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -305,17 +226,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `remember_token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `firstname`, `username`, `mail`, `password`, `address`, `phone`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(25, 'Karena', 'Emma', 'freelance', 'emma@karena.fr', '$2y$10$Uk7vm7iV4ccMobTXgvmNgeW31nPcNmg46Rz.tgsvg28wMqjrNM2ZK', '5 allée des chataignes 15480 L''Envale', 622708556, 'freelancer', 'FBfFwnM8vzZXo1vsqYzgB4tFTFo8eVfuSuyXyIsj4pJhA1lYelZaSaEKpie2', '2017-02-16 12:09:00', '2017-04-25 12:41:16'),
-(26, 'Duss', 'Jean-Claude', 'company', 'jean-claude@duss.fr', '$2y$10$gI6dlK2cN0HpLpBPY4RcqOHBjW.rhlXEIj1ZzRgQzmN.C2Io.0Cd.', '4 allée du robinet 75200 Paris', 615264524, 'company', '52Q8KLPeutLM28ijVCXDPkUwNu78HYLTt7ouYj6m6TzPM2ysgtAgMW1gvgVC', '2017-02-16 12:10:17', '2017-04-22 13:20:17'),
-(27, 'Montias', 'Timothée', 'admin', 'timontias@gmail.com', '$2y$10$KpN4miujmsREs0NSw0rC8eP59sqxk.4Dt8F4YRfnOWg8r83g3l1Aq', '5 rue du docteur Dalbera 06390 Contes', 622708555, 'admin', 'g1qxLvG6jqfBUKVtt2yY0Ww0G5EXkbDXAQ4ofMVA2vsBXr8fRVrr7Zmco74f', '2017-02-16 12:11:03', '2017-04-26 13:05:05'),
-(28, 'Testundeux', 'Undeuxtest', 'untest', 'test@test.test', '$2y$10$a7QDtwdlRSgws2/WX0utUOqCAjqDiZPEaOBlESyNtAr1GVKld7CmS', '56 allée des platanes 12520 La manche', 622708555, 'freelancer', 'RUgbcCR5hKu5ymRbQiANJgfP9TNfoVddVwWyrHehHUiUymMIE69yRJEhwo80', '2017-04-06 07:07:19', '2017-04-12 08:22:41');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables exportées
@@ -432,47 +343,47 @@ ALTER TABLE `ability`
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `cdc`
 --
 ALTER TABLE `cdc`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `contrat`
 --
 ALTER TABLE `contrat`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `freelancer`
 --
 ALTER TABLE `freelancer`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `offre`
 --
 ALTER TABLE `offre`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `result`
 --
@@ -487,7 +398,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
 --
